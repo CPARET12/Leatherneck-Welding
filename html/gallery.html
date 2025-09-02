@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gallery | Leatherneck Welding LLC</title>
+
+  <!-- Fonts & Base CSS (reuse your site CSS first) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/home.css" />
+  <link rel="stylesheet" href="../css/gallery.css" />
+</head>
+<body>
+
+  <!-- Topbar + Navbar (optional—reuse your site header here) -->
+  <div class="topbar">
+    <div class="container">
+      <span>Veteran Owned • Licensed & Insured</span>
+      <a class="phone" href="tel:18066812585">(806) 681-2585</a>
+    </div>
+  </div>
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="home.html" class="brand">Leatherneck Welding LLC</a>
+      <nav class="links">
+        <a href="home.html">Home</a>
+        <a href="services.html">Services</a>
+        <a class="active" href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Title -->
+  <section class="section">
+    <div class="container">
+      <h1 class="section-title" style="margin-bottom: .75rem;">Project Gallery</h1>
+      <p>Browse recent projects by category. Hover “Details” to see specs and notes.</p>
+    </div>
+  </section>
+
+  <!-- Tabs -->
+  <section class="section section-tight">
+    <div class="container">
+      <div class="tabs" role="tablist" aria-label="Gallery categories">
+        <button class="tab is-active" data-cat="all" role="tab" aria-selected="true">All</button>
+        <button class="tab" data-cat="residential" role="tab">Residential</button>
+        <button class="tab" data-cat="commercial" role="tab">Commercial</button>
+        <button class="tab" data-cat="agriculture" role="tab">Agriculture</button>
+        <button class="tab" data-cat="fencing" role="tab">Fencing</button>
+        <button class="tab" data-cat="other" role="tab">Other Services</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Grid -->
+  <section class="section">
+    <div class="container">
+      <div id="galleryGrid" class="gallery-grid">
+        <!-- Each item -->
+        <!-- Example Residential -->
+        <article class="g-item" data-cat="residential">
+          <div class="g-media">
+            <img src="../folder.images/barndominium1.png" alt="Barndominium exterior with covered porch">
+            <a class="g-more" href="projects/barndo-open-span.html">More Images</a>
+            <button class="g-details"
+              data-title="Barndominium – Open-Span"
+              data-location="North Texas"
+              data-size="2,400 sq ft"
+              data-notes="Steel frame with insulated panels, 12' eaves, stained concrete, black metal roof.">
+              Details
+            </button>
+          </div>
+        </article>
+
+        <!-- Example Commercial -->
+        <article class="g-item" data-cat="commercial">
+          <div class="g-media">
+            <img src="../folder.images/metal_building_card.png" alt="Commercial metal building shop exterior">
+            <a class="g-more" href="projects/barndo-open-span.html">More Images</a>
+            <button class="g-details"
+              data-title="Steel Shop – 40x60"
+              data-location="Gainesville, TX"
+              data-size="2 bays, 14' doors"
+              data-notes="Full weld-up, liner panels, LED high-bays, 6” slab w/ rebar, 200A service.">
+              Details
+            </button>
+          </div>
+        </article>
+
+        <!-- Example Agriculture -->
+        <article class="g-item" data-cat="agriculture">
+          <div class="g-media">
+            <img src="../folder.images/fencing_card1.png" alt="Ranch fencing at sunset">
+            <a class="g-more" href="projects/barndo-open-span.html">More Images</a>
+            <button class="g-details"
+              data-title="Ranch Fence – Pipe & Cable"
+              data-location="Cooke County, TX"
+              data-size="1,200 ft"
+              data-notes="Schedule 40 posts, 3-rail + cable top, powder-coated gates, H-braces.">
+              Details
+            </button>
+          </div>
+        </article>
+
+        <!-- Example Fencing -->
+        <article class="g-item" data-cat="fencing">
+          <div class="g-media">
+            <img src="../folder.images/patio deck rail 1.png" alt="Patio railing with black steel balusters">
+            <a class="g-more" href="projects/barndo-open-span.html">More Images</a>
+            <button class="g-details"
+              data-title="Custom Deck Railing"
+              data-location="Denison, TX"
+              data-size="80 ft"
+              data-notes="Welded steel posts & rails, powder-coated black, code-compliant spacing.">
+              Details
+            </button>
+          </div>
+        </article>
+
+        <!-- Example Other -->
+        <article class="g-item" data-cat="other">
+          <div class="g-media">
+            <img src="../folder.images/repairs_card1.png" alt="Metal repairs and fabrication">
+            <a class="g-more" href="projects/barndo-open-span.html">More Images</a>
+            <button class="g-details"
+              data-title="Gate Fabrication & Repair"
+              data-location="Oklahoma"
+              data-size="12 ft swing gate"
+              data-notes="Hinges, latch, receiver, true-square alignment; primed + coated.">
+              Details
+            </button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating details panel (one instance reused for all items) -->
+  <aside id="detailsPanel" class="details-panel" aria-hidden="true">
+    <div class="dp-inner">
+      <h3 id="dpTitle">Project</h3>
+      <ul class="dp-list">
+        <li><strong>Location:</strong> <span id="dpLocation"></span></li>
+        <li><strong>Size:</strong> <span id="dpSize"></span></li>
+      </ul>
+      <p id="dpNotes"></p>
+    </div>
+  </aside>
+
+  <!-- Footer (optional—reuse your site footer) -->
+
+  <script src="../js/gallery.js" defer></script>
+</body>
+</html>

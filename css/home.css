@@ -1,0 +1,504 @@
+/* ===================== Base / Reset ===================== */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+img { max-width: 100%; display: block; height: auto; }
+a { color: inherit; text-decoration: none; }
+
+:root {
+  --bg: #d6d2cd;          /* warm light gray/tan background */
+  --ink: #2c3e50;         /* steel blue for text */
+  --muted: #e9d5b5; /* slightly darker sand for section backgrounds */
+  --card: #ffffff; /* white/light cards for clean contrast */
+  --brand: #d35400;       /* burnt orange accent (sparks, welding glow) */
+  --accent: #bdc3c7;      /* brushed silver highlight */
+  --ring: rgba(211, 84, 0, 0.45); /* orange glow for hover focus */
+}
+body {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.container{ width:min(1120px, 92%); margin-inline:auto; }
+
+/* ===================== Top Bar ===================== */
+
+/* Brand in navbar (hero) */
+.hero .brand {
+  color: #e9eef5;                 /* soft steel/ice */
+  text-shadow: 0 1px 2px rgba(0,0,0,.35);
+}
+.hero .brand:hover { color: #ffffff; }
+
+.topbar{
+  background: linear-gradient(90deg, var(--muted), #938e88);
+  font-size:.92rem; 
+  color:#5b463a;
+}
+.topbar .container{
+  display:flex; justify-content:space-between; align-items:center; padding:.4rem 0;
+}
+/* Top bar phone number */
+.topbar .phone {
+  color: #d72638 !important;      /* crisp red */
+  font-weight: 700;
+}
+.topbar .phone:hover {
+  text-decoration: underline;
+}
+
+/* ===================== HERO (nav inside) ===================== */
+.hero{
+  position: relative;
+  background: url('../folder.images/leathnerc_home1.PNG') center/cover no-repeat;
+  min-height: 700px;
+  background-attachment: fixed;
+  border-bottom: 10px solid;
+  border-image: linear-gradient(to right, #333, #666, #333) 1;
+
+}
+
+
+/* ===================== NAV INSIDE HERO ===================== */
+.hero .navbar{
+  position:absolute; top:0; left:0; width:100%;
+  background: rgba(0,0,0,0.28);
+  backdrop-filter: blur(2px);
+  border:none;
+  z-index:2;
+}
+.nav-inner{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:.8rem 0;
+}
+.brand{ font-weight:800; letter-spacing:.2px; }
+
+.links{ display:flex; gap:1rem; align-items:center; }
+.links a{ color:#cfe2ff; padding:.5rem .7rem; border-radius:.7rem; }
+.links a:hover{ background:rgba(255,255,255,.07); }
+.links .active{ color:#fff; font-weight:600; }
+.nav-toggle{ display:none; background:none; border:0; color:#e3f0ff; font-size:1.5rem; }
+
+/* ===================== DROPDOWN ===================== */
+.dropdown { position: relative; display: inline-block; }
+.dropbtn{
+  padding:.5rem .7rem; border-radius:.7rem; color:#cfe2ff; display:inline-block;
+}
+.dropdown-content{
+  display:none;
+  position:absolute; top:100%; left:0;
+  min-width:220px;
+  background:#f3dfc2;
+  border:1px solid rgba(0,0,0,.08);
+  box-shadow:0 6px 18px rgba(0,0,0,.25);
+  z-index:1000;
+}
+.dropdown-content a{
+  display:block; 
+  padding:.7rem 1rem; 
+  color:#4a3a31;
+}
+.dropdown-content a:hover{ 
+  background: rgba(0,0,0,.06); 
+  color:#2f2420; 
+}
+.dropdown:hover .dropdown-content{ 
+  display:block; 
+}
+.dropdown:hover .dropbtn{ 
+  background:rgba(255,255,255,.07); 
+  color:#4a3a31; 
+}
+
+/* ===================== Buttons ===================== */
+
+.btn{
+  display:inline-block; padding:.7rem 1rem; border:1px solid transparent; border-radius:.8rem;
+  font-weight:600; transition: box-shadow .2s ease, transform .04s ease;
+}
+.btn:active{ transform: translateY(1px); }
+.btn-primary{ background:var(--brand); color:#fff; }
+.btn-primary:hover{ box-shadow:0 0 0 6px var(--ring); }
+.btn-ghost{ border:1px solid var(--brand); color:var(--brand); }
+.btn-ghost:hover{ 
+  background: var(--brand);
+  color:#fff;
+ }
+
+/* ===================== Sections / Cards ===================== */
+.section {
+  background: var(--bg);
+  color: var(--ink);
+  padding: 2.5rem 0;         /* vertical spacing lives as padding */
+}
+
+.section > *:first-child { 
+  margin-top: 0;             /* stop the margin from escaping */
+}
+
+.section-title {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: #1a1b1b;
+  
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 6px 22px rgba(0,0,0,.18);
+  min-height: 400px;
+  position: relative;
+  color: white;
+  overflow: hidden;
+  border: 5px solid black; /* adds black border */
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45); /* overlay */
+  z-index: 0;
+}
+
+.card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.card h3 { 
+  margin: .2rem 0 .4rem;
+  color: #aaacae;
+ }
+.card p { color: #e6e9ed; }
+.card .link { color: var(--brand); display: inline-block; margin-top: .6rem; }
+.card:hover {
+  outline: none; /* remove the solid border */
+  box-shadow: 0 0 20px 5px rgba(222, 132, 6, 0.886); /* glow effect */
+  transition: box-shadow 0.3s ease; /* smooth animation */
+}
+
+a.link {
+  color: #e90b0b; 
+  border: 5px solid #aaacae; /* adds black border */
+  padding: 0.2em 0.5em; /* so border isn't tight on text */
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+a.link:hover {
+  color: #e68900; /* darker on hover */
+}
+
+/* ====== Individual Card Backgrounds ====== */
+.card.barndominiums {
+  background: url('../folder.images/barndominium5.PNG') center/cover no-repeat;
+}
+
+.card.metal-buildings {
+  background: url('../folder.images/metal_building_card.png') center/cover no-repeat;
+}
+
+.card.ranch-fencing {
+  background: url('../folder.images/fencing_card1.png') center/cover no-repeat;
+}
+
+.card.custom-fabrication {
+  background: url('../folder.images/repairs_card1.png') center/cover no-repeat;
+}
+
+
+
+
+/* ===================== Carousel ===================== */
+.carousel{ position:relative; overflow:hidden; border-radius:1rem; border:1px solid rgba(255,255,255,.06); }
+.carousel-track{ display:flex; transition: transform .35s ease; will-change: transform; }
+.slide{ min-width:100%; }
+.slide img{ width:100%; height:auto; object-fit:contain;background-color: #0b1320; /* fills space if image doesn't cover full area */ }
+
+.carousel-track, .slide {
+  height: 600px; /* adjust as needed */
+}
+
+.carousel-btn{
+  border: 1px solid rgba(0,0,0,.15);
+  background: #f2dfc1;
+  color: #5a4740;
+}
+.carousel-btn:hover{ background:#e9d5b5; }
+
+
+.center{ text-align:center; margin-top:1rem; }
+.lead{ color:#cfe2ff; }
+.narrow{ max-width:75ch; }
+
+
+/* Two-column layout for Service Area */
+.service-area .two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.service-area .col-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  object-fit: cover;
+}
+
+/* Stack on mobile */
+@media (max-width: 860px) {
+  .service-area .two-col {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .service-area .col-image {
+    margin-bottom: 1.5rem;
+  }
+}
+/* ===================== CTA ===================== */
+.cta{
+  background: linear-gradient(180deg, rgba(194,109,47,.08), rgba(0,0,0,.04)), var(--muted);
+  border-top: 1px solid rgba(0,0,0,.06);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+.cta-inner{ display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+.cta h2{ margin:0; }
+.cta p{ color:#4a3a31; }
+
+/* ===================== Footer ===================== */
+.footer {
+  background: #2b2b2b;   /* dark charcoal */
+  color: #e6e6e6;
+  padding: 2.5rem 0 1.5rem;
+  font-size: 0.95rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr; /* Company wider, Contact + Links narrower */
+  gap: 2rem;
+}
+
+.footer strong,
+.footer h4 {
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.footer p,
+.footer .list li {
+  color: #cfcfcf;
+  margin-bottom: 0.4rem;
+}
+
+.footer .list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer a {
+  color: #cfcfcf;
+  text-decoration: none;
+}
+.footer a:hover {
+  color: #d35400; /* rust orange hover */
+  text-decoration: underline;
+}
+
+.subfooter {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 2rem;
+  padding-top: 1rem;
+  text-align: center;
+  color: #aaa;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+
+/* ===================== Responsive ===================== */
+@media (max-width: 1024px){
+  .cards{ grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 920px){
+  .cta-inner{ flex-direction: column; align-items: flex-start; }
+  .footer-grid{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 760px){
+  .links{ flex-wrap:wrap; gap:.4rem; }
+  .cards{ grid-template-columns: 1fr; }
+  .slide img{ height:260px; }
+  .footer-grid{ grid-template-columns: 1fr; }
+}
+/* Section text defaults on the sand bg */
+a { color: var(--brand); }
+a:hover { color:#8a3913; }
+
+/* ===== Intro + Carousel two-column ===== */
+.intro-showcase {
+  background: var(--bg);
+  color: var(--ink);
+  padding: 3.5rem 0;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr; /* a hair more room for the headline */
+  gap: 2rem;
+  align-items: center;
+}
+
+.col-text h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0 0 1rem;
+  color: var(--ink);
+}
+
+.col-text p {
+  max-width: 60ch;
+  margin: 0 0 1.25rem;
+  line-height: 1.6;
+  color: var(--ink);
+
+}
+
+.col-text .hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.col-gallery .section-title {
+  margin: 0 0 .75rem;
+}
+
+/* Make the carousel look good inside the column */
+.col-gallery .carousel {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 6px 22px rgba(0,0,0,.18);
+  background: #111; /* fallback behind images */
+}
+
+.col-gallery .carousel-viewport,
+.col-gallery .carousel-track,
+.col-gallery .slide {
+  height: 420px;              /* adjust if you want taller */
+}
+
+/* If your global carousel uses object-fit: contain, consider cover for nicer crop here */
+.col-gallery .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;           /* fill the frame cleanly */
+}
+
+/* Responsive stack */
+@media (max-width: 980px) {
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+  .col-gallery {
+    order: 2;                  /* keep text first on mobile */
+  }
+  .col-text {
+    order: 1;
+    text-align: center;
+  }
+  .col-text p { margin-left: auto; margin-right: auto; }
+  .col-text .hero-cta { justify-content: center; }
+  .col-gallery .carousel-viewport,
+  .col-gallery .carousel-track,
+  .col-gallery .slide {
+    height: 320px;
+  }
+}
+
+/* Container for the bottom controls */
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+/* Style the buttons */
+.carousel-btn {
+  border: none;
+  background: var(--brand);
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.carousel-btn:hover {
+  background: #8a1d1d; /* darker red hover */
+}
+/* Where We Work + CTA Combined */
+.work-cta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.work-image img {
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+.work-text h2 {
+  margin-bottom: 1rem;
+}
+
+.work-text h3 {
+  margin-top: 2rem;
+  color: var(--brand);
+}
+
+.work-text p {
+  margin-bottom: 1rem;
+}
+
+.work-text .hero-cta {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+@media (max-width: 900px) {
+  .work-cta-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .work-text .hero-cta {
+    justify-content: center;
+  }
+}

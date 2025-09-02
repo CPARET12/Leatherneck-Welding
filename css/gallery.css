@@ -1,0 +1,144 @@
+/* ============ Tabs ============ */
+.section.section-tight { padding-top: 1rem; padding-bottom: 1rem; }
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .5rem .75rem;
+}
+.tab {
+  appearance: none;
+  border: 1px solid rgba(0,0,0,.08);
+  background: #fff;
+  color: var(--ink);
+  padding: .55rem .9rem;
+  border-radius: .7rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: box-shadow .15s ease, transform .02s ease, background .15s ease;
+}
+.tab:hover { box-shadow: 0 0 0 4px rgba(0,0,0,.06); }
+.tab.is-active {
+  background: var(--brand);
+  color: #fff;
+  border-color: transparent;
+}
+
+/* ============ Gallery Grid ============ */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+.g-item {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,.18);
+  background: #111;
+}
+.g-media { position: relative; overflow: hidden; }
+.g-media img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Details button sits at bottom-right over the image */
+.g-details {
+  position: absolute;
+  right: .6rem;
+  bottom: .6rem;
+  border: none;
+  background: var(--brand);
+  color: #fff;
+  padding: .45rem .7rem;
+  border-radius: .6rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+  transition: transform .06s ease, box-shadow .15s ease;
+}
+.g-details:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,0,0,.3); }
+
+/* ============ Floating Details Panel ============ */
+.details-panel {
+  position: absolute;
+  inset: 0; /* we’ll position inner with JS near the hovered item */
+  pointer-events: none; /* clicks pass through unless on inner */
+  z-index: 50;
+}
+.dp-inner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: min(380px, 92vw);
+  background: #1e242b;
+  color: #e8eef5;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 12px;
+  box-shadow: 0 14px 36px rgba(0,0,0,.45);
+  padding: 1rem 1.1rem 1rem;
+  display: none;            /* hidden by default */
+  pointer-events: auto;     /* allow hover inside */
+}
+.details-panel[data-show="true"] .dp-inner { display: block; }
+
+.dp-inner h3 {
+  margin: .1rem 0 .5rem;
+  color: #fff;
+  font-size: 1.15rem;
+}
+.dp-list {
+  list-style: none; margin: 0 0 .5rem; padding: 0;
+}
+.dp-list li { margin: .2rem 0; }
+.dp-list strong { color: #cfd8e3; }
+
+/* ============ Responsive tweak ============ */
+@media (min-width: 900px) {
+  .dp-inner { width: 420px; }
+}
+/* More Images button (bottom-left) */
+.g-more {
+  position: absolute;
+  left: .6rem;
+  bottom: .6rem;
+  display: inline-block;
+  padding: .44rem .7rem;
+  border-radius: .6rem;
+  font-weight: 700;
+  text-decoration: none;
+  background: #fff;
+  color: var(--brand);
+  border: 2px solid var(--brand);
+  box-shadow: 0 4px 12px rgba(0,0,0,.22);
+  transition: transform .06s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
+}
+
+.g-more:hover {
+  background: var(--brand);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.28);
+}
+
+/* Keep Details button bottom-right as you have */
+.g-details {
+  position: absolute;
+  right: .6rem;
+  bottom: .6rem;
+  border: none;
+  background: var(--brand);
+  color: #fff;
+  padding: .45rem .7rem;
+  border-radius: .6rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+  transition: transform .06s ease, box-shadow .15s ease;
+}
+.g-details:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,0,0,.3); }
