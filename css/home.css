@@ -217,8 +217,17 @@ a.link:hover {
   background: url('../folder.images/repairs_card1.png') center/cover no-repeat;
 }
 
+.card.residential {
+  background: url('../folder.images/residential1.PNG') center/cover no-repeat;
+}
 
+.card.commercial {
+  background: url('../folder.images/commercial1.PNG') center/cover no-repeat;
+}
 
+.card.agriculture {
+  background: url('../folder.images/agriculture1.PNG') center/cover no-repeat;
+}
 
 /* ===================== Carousel ===================== */
 .carousel{ position:relative; overflow:hidden; border-radius:1rem; border:1px solid rgba(255,255,255,.06); }

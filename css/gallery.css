@@ -1,6 +1,16 @@
 /* ============ Tabs ============ */
 .section.section-tight { padding-top: 1rem; padding-bottom: 1rem; }
 
+.navbar {
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
 .tabs {
   display: flex;
   justify-content: center;

@@ -7,15 +7,16 @@
 
   <!-- Fonts & Base CSS (reuse your site CSS first) -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/home.css" />
-  <link rel="stylesheet" href="../css/gallery.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/gallery.css" />
+  <script src="js/gallery.js" defer></script>
 </head>
 <body>
 
   <!-- Topbar + Navbar (optional—reuse your site header here) -->
   <div class="topbar">
     <div class="container">
-      <span>Veteran Owned • Licensed & Insured</span>
+      <span>Veteran Owned • Licensed & Insured • BBB</span>
       <a class="phone" href="tel:18066812585">(806) 681-2585</a>
     </div>
   </div>
@@ -24,8 +25,17 @@
     <div class="container nav-inner">
       <a href="home.html" class="brand">Leatherneck Welding LLC</a>
       <nav class="links">
-        <a href="home.html">Home</a>
-        <a href="services.html">Services</a>
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+          <a href="services.html" class="dropbtn">Services ▾</a>
+          <div class="dropdown-content">
+            <a href="residential.html">Residential</a>
+            <a href="commercial.html">Commercial</a>
+            <a href="agriculture.html">Agriculture</a>
+            <a href="fencing.html">Fencing</a>
+            <a href="other-services.html">Other Services</a>
+          </div>
+        <a href="shop.html">Shop</a>
         <a class="active" href="gallery.html">Gallery</a>
         <a href="contact.html">Contact</a>
       </nav>
@@ -62,7 +72,7 @@
         <!-- Example Residential -->
         <article class="g-item" data-cat="residential">
           <div class="g-media">
-            <img src="../folder.images/barndominium1.png" alt="Barndominium exterior with covered porch">
+            <img src="folder.images/barndominium1.png" alt="Barndominium exterior with covered porch">
             <a class="g-more" href="projects/barndo-open-span.html">More Images</a>
             <button class="g-details"
               data-title="Barndominium – Open-Span"
@@ -77,7 +87,7 @@
         <!-- Example Commercial -->
         <article class="g-item" data-cat="commercial">
           <div class="g-media">
-            <img src="../folder.images/metal_building_card.png" alt="Commercial metal building shop exterior">
+            <img src="folder.images/metal_building_card.png" alt="Commercial metal building shop exterior">
             <a class="g-more" href="projects/barndo-open-span.html">More Images</a>
             <button class="g-details"
               data-title="Steel Shop – 40x60"
@@ -92,7 +102,7 @@
         <!-- Example Agriculture -->
         <article class="g-item" data-cat="agriculture">
           <div class="g-media">
-            <img src="../folder.images/fencing_card1.png" alt="Ranch fencing at sunset">
+            <img src="folder.images/fencing_card1.png" alt="Ranch fencing at sunset">
             <a class="g-more" href="projects/barndo-open-span.html">More Images</a>
             <button class="g-details"
               data-title="Ranch Fence – Pipe & Cable"
@@ -107,7 +117,7 @@
         <!-- Example Fencing -->
         <article class="g-item" data-cat="fencing">
           <div class="g-media">
-            <img src="../folder.images/patio deck rail 1.png" alt="Patio railing with black steel balusters">
+            <img src="folder.images/patio_deck_rail1.png" alt="Patio railing with black steel balusters">
             <a class="g-more" href="projects/barndo-open-span.html">More Images</a>
             <button class="g-details"
               data-title="Custom Deck Railing"
@@ -122,7 +132,7 @@
         <!-- Example Other -->
         <article class="g-item" data-cat="other">
           <div class="g-media">
-            <img src="../folder.images/repairs_card1.png" alt="Metal repairs and fabrication">
+            <img src="folder.images/repairs_card1.png" alt="Metal repairs and fabrication">
             <a class="g-more" href="projects/barndo-open-span.html">More Images</a>
             <button class="g-details"
               data-title="Gate Fabrication & Repair"

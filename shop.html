@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shop | Leatherneck Welding LLC</title>
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/shop.css" />
+  <script src="js/shop.js" defer></script>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="topbar">
+    <div class="container">
+      <span>Veteran Owned • Licensed & Insured • BBB</span>
+      <a class="phone" href="tel:18066812585">(806) 681-2585</a>
+    </div>
+  </div>
+
+  <!-- Nav -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">Leatherneck Welding LLC</a>
+      <nav class="links">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+        <a href="services.html" class="dropbtn">Services ▾</a>
+        <div class="dropdown-content">
+          <a href="residential.html">Residential</a>
+          <a href="commercial.html">Commercial</a>
+          <a href="agriculture.html">Agriculture</a>
+          <a href="fencing.html">Fencing</a>
+          <a href="other-services.html">Other Services</a>
+        </div>
+      </div>
+        <a href="gallery.html">Gallery</a>
+        <a href="shop.html" class="active">Shop</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Shop Header -->
+  <section class="section">
+    <div class="container">
+      <h1 class="section-title">Shop from your local Leatherneck</h1>
+      <p class="narrow">Browse ready-to-order items or request a custom build.</p>
+    </div>
+  </section>
+
+  <!-- Tabs -->
+  <section class="section">
+    <div class="container">
+      <div class="shop-tabs" role="tablist">
+        <button class="shop-tab is-active" data-cat="all" aria-selected="true">All</button>
+        <button class="shop-tab" data-cat="firepits">Fire Pits</button>
+        <button class="shop-tab" data-cat="rails">Rails</button>
+        <button class="shop-tab" data-cat="gates">Gates</button>
+        <button class="shop-tab" data-cat="other">Other</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="section">
+    <div class="container">
+      <div id="productsGrid" class="products-grid">
+
+        <!-- Fire Pit -->
+        <article class="product" data-cat="firepits">
+          <div class="p-media">
+            <img src="folder.images/36steel_fire_pit1.PNG" alt="36 inch steel fire pit with logo option">
+            <span class="p-badge">Made to Order</span>
+          </div>
+          <div class="p-body">
+            <h3 class="p-title">36" Steel Fire Pit</h3>
+            <p class="p-desc">Heavy steel with optional custom logo cutout.</p>
+            <div class="p-meta">
+              <span class="p-price">$425</span>
+            </div>
+            <div class="p-cta">
+              <a class="btn btn-primary" href="#">Buy Now</a>
+              <a class="btn btn-ghost" href="contact.html?product=firepit">Request Custom</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Rail -->
+        <article class="product" data-cat="rails">
+          <div class="p-media">
+            <img src="folder.images/6steel_rail_panel1.PNG" alt="Steel rail panel">
+          </div>
+          <div class="p-body">
+            <h3 class="p-title">Steel Rail Panel (6 ft)</h3>
+            <p class="p-desc">Powder-coated welded steel rail panel.</p>
+            <div class="p-meta">
+              <span class="p-price">$289</span>
+            </div>
+            <div class="p-cta">
+              <a class="btn btn-primary" href="#">Buy Now</a>
+              <a class="btn btn-ghost" href="contact.html?product=rail">Request Custom</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Gate -->
+        <article class="product" data-cat="gates">
+          <div class="p-media">
+            <img src="folder.images/12ranch_gate1.PNG" alt="Custom welded ranch gate">
+          </div>
+          <div class="p-body">
+            <h3 class="p-title">Ranch Gate (12 ft)</h3>
+            <p class="p-desc">Durable ranch gate with custom logo options.</p>
+            <div class="p-meta">
+              <span class="p-price">From $1,250</span>
+            </div>
+            <div class="p-cta">
+              <a class="btn btn-primary" href="contact.html?product=gate">Get a Quote</a>
+              <a class="btn btn-ghost" href="gallery.html">View Examples</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Yard Art -->
+        <article class="product" data-cat="other">
+          <div class="p-media">
+            <img src="folder.images/steel_yard_art1.PNG" alt="Steel yard art piece">
+          </div>
+          <div class="p-body">
+            <h3 class="p-title">Steel Yard Art</h3>
+            <p class="p-desc">Plasma-cut steel art in multiple finishes.</p>
+            <div class="p-meta">
+              <span class="p-price">$95–$295</span>
+            </div>
+            <div class="p-cta">
+              <a class="btn btn-primary" href="#">Buy Now</a>
+              <a class="btn btn-ghost" href="contact.html?product=yardart">Request Custom</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (reuse your footer include) -->
+
+</body>
+</html>
