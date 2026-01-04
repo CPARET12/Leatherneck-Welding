@@ -231,3 +231,20 @@ body {
     padding:.75rem .9rem;
   }
 }
+/* ===================== Topbar Mobile Fix ===================== */
+@media (max-width: 600px){
+  .topbar .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-align: center;
+  }
+
+  .topbar .phone{
+    display: block;
+    margin-top: 2px;
+    font-weight: 700;
+    color: #c0392b; /* keep your red */
+  }
+}
