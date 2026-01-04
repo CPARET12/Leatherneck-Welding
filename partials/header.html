@@ -2,7 +2,7 @@
 <div class="topbar">
   <div class="container">
     <span>Veteran Owned • Licensed & Insured • BBB</span>
-    <a class="phone" href="tel:18066812585">(806)681-2585</a>
+    <a class="phone" href="tel:18066812585">(806) 681-2585</a>
   </div>
 </div>
 
@@ -11,10 +11,18 @@
   <div class="container nav-inner">
     <a href="index.html" class="brand">Leatherneck Welding LLC</a>
 
-    <nav class="links">
+    <!-- Hamburger (mobile) -->
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Nav -->
+    <nav id="primaryNav" class="links" data-open="false">
       <a href="index.html" data-page-link="home">Home</a>
 
-      <div class="dropdown">
+      <div class="dropdown" data-open="false">
         <a href="services.html" class="dropbtn" data-page-link="services">Services ▾</a>
         <div class="dropdown-content">
           <a href="residential.html">Residential</a>
@@ -24,6 +32,7 @@
           <a href="other-services.html">Other Services</a>
         </div>
       </div>
+
       <a href="shop.html" data-page-link="shop">Shop</a>
       <a href="about.html" data-page-link="about">About</a>
       <a href="gallery.html" data-page-link="gallery">Gallery</a>
@@ -31,3 +40,4 @@
     </nav>
   </div>
 </header>
+
