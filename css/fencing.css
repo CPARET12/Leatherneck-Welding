@@ -1,0 +1,172 @@
+/* Page-only styles for Fencing */
+
+/* Push content below injected header */
+.fn-hero {
+  padding-top: 8.5rem; /* adjust if needed */
+  background: linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,0)), var(--bg);
+}
+
+.fn-hero__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+
+.fn-kicker {
+  display: inline-block;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin: 0 0 .6rem;
+}
+
+.fn-title {
+  font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+  line-height: 1.05;
+  margin: 0 0 .75rem;
+  color: var(--ink);
+}
+
+.fn-subtitle {
+  margin: 0 0 1.25rem;
+  max-width: 62ch;
+}
+
+.fn-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 0 0 1rem;
+}
+
+.fn-badges {
+  display: flex;
+  gap: .6rem;
+  flex-wrap: wrap;
+}
+
+.fn-badge {
+  background: rgba(255,255,255,.55);
+  border: 1px solid rgba(0,0,0,.08);
+  padding: .5rem .7rem;
+  border-radius: .8rem;
+  font-weight: 700;
+}
+
+/* Hero image */
+.fn-hero__media {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.fn-hero__image {
+  width: 100%;
+  min-height: 475px;
+  border-radius: 1.2rem;
+  border: 5px solid var(--brand);
+  box-shadow: 0 10px 28px rgba(0,0,0,.18);
+  background: url("../folder.images/fencing3.JPG") center/cover no-repeat;
+}
+
+/* Lead text */
+.fn-lead {
+  margin: .4rem 0 1.2rem;
+  max-width: 75ch;
+}
+
+/* Fence type cards */
+.fn-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.fn-card {
+  background: rgba(255,255,255,.6);
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 1rem;
+  padding: 1rem 1rem 1.1rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
+}
+
+.fn-card h3 {
+  margin: .2rem 0 .4rem;
+}
+
+.fn-card ul {
+  margin: .7rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.fn-card li {
+  margin: .25rem 0;
+}
+
+/* Cost factors */
+.fn-factors {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.fn-factor {
+  background: rgba(255,255,255,.55);
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,.10);
+}
+
+.fn-factor h3 {
+  margin: .2rem 0 .35rem;
+}
+
+/* CTA */
+.fn-cta {
+  background: linear-gradient(180deg, rgba(194,109,47,.10), rgba(0,0,0,.04)), var(--muted);
+  border-top: 1px solid rgba(0,0,0,.06);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+  padding: 2.25rem 0;
+}
+
+.fn-cta__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.fn-cta__inner h2 {
+  margin: 0 0 .35rem;
+}
+
+.fn-cta__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .fn-hero__grid {
+    grid-template-columns: 1fr;
+  }
+  .fn-hero__media {
+    justify-content: center;
+  }
+  .fn-grid {
+    grid-template-columns: 1fr;
+  }
+  .fn-factors {
+    grid-template-columns: 1fr;
+  }
+  .fn-cta__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -4,45 +4,28 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Shop | Leatherneck Welding LLC</title>
-  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="partials/site.css" />
   <link rel="stylesheet" href="css/shop.css" />
+
+  <link rel="stylesheet" href="partials/header.css" />
+  <link rel="stylesheet" href="partials/footer.css" />
+
+  <script src="partials/header.js" defer></script>
+  <script src="partials/footer.js" defer></script>
   <script src="js/shop.js" defer></script>
+
+
+
 </head>
 <body>
 
-  <!-- Top Bar -->
-  <div class="topbar">
-    <div class="container">
-      <span>Veteran Owned • Licensed & Insured • BBB</span>
-      <a class="phone" href="tel:18066812585">(806) 681-2585</a>
-    </div>
-  </div>
+<div id="site-header"></div>
 
-  <!-- Nav -->
-  <header class="navbar">
-    <div class="container nav-inner">
-      <a href="index.html" class="brand">Leatherneck Welding LLC</a>
-      <nav class="links">
-        <a href="index.html">Home</a>
-        <div class="dropdown">
-        <a href="services.html" class="dropbtn">Services ▾</a>
-        <div class="dropdown-content">
-          <a href="residential.html">Residential</a>
-          <a href="commercial.html">Commercial</a>
-          <a href="agriculture.html">Agriculture</a>
-          <a href="fencing.html">Fencing</a>
-          <a href="other-services.html">Other Services</a>
-        </div>
-      </div>
-        <a href="gallery.html">Gallery</a>
-        <a href="shop.html" class="active">Shop</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <!-- Hero background section -->
+  <section class="hero"></section>
 
   <!-- Shop Header -->
-  <section class="section">
+  <section class="section shop-header">
     <div class="container">
       <h1 class="section-title">Shop from your local Leatherneck</h1>
       <p class="narrow">Browse ready-to-order items or request a custom build.</p>
@@ -68,83 +51,171 @@
       <div id="productsGrid" class="products-grid">
 
         <!-- Fire Pit -->
-        <article class="product" data-cat="firepits">
-          <div class="p-media">
-            <img src="folder.images/36steel_fire_pit1.PNG" alt="36 inch steel fire pit with logo option">
-            <span class="p-badge">Made to Order</span>
-          </div>
-          <div class="p-body">
-            <h3 class="p-title">36" Steel Fire Pit</h3>
-            <p class="p-desc">Heavy steel with optional custom logo cutout.</p>
-            <div class="p-meta">
-              <span class="p-price">$425</span>
-            </div>
-            <div class="p-cta">
-              <a class="btn btn-primary" href="#">Buy Now</a>
-              <a class="btn btn-ghost" href="contact.html?product=firepit">Request Custom</a>
-            </div>
-          </div>
-        </article>
+<article class="product"
+         data-cat="firepits"
+         data-id="firepit-36"
+         data-name='36" Steel Fire Pit'
+         data-price="425"
+         data-has-addons="false">
+
+  <div class="p-media">
+    <img src="folder.images/36steel_fire_pit1.PNG" alt="36 inch steel fire pit with logo option">
+    <span class="p-badge">Made to Order</span>
+  </div>
+
+  <div class="p-body">
+    <h3 class="p-title">36" Steel Fire Pit</h3>
+    <p class="p-desc">Heavy steel with optional custom logo cutout.</p>
+
+    <div class="p-meta">
+      <span class="p-price">$425</span>
+    </div>
+
+    <div class="p-cta">
+      <button type="button" class="btn btn-primary js-buy">Buy Now</button>
+      <a class="btn btn-ghost" href="contact.html?product=firepit">Request Custom</a>
+    </div>
+  </div>
+</article>
+
 
         <!-- Rail -->
-        <article class="product" data-cat="rails">
-          <div class="p-media">
-            <img src="folder.images/6steel_rail_panel1.PNG" alt="Steel rail panel">
-          </div>
-          <div class="p-body">
-            <h3 class="p-title">Steel Rail Panel (6 ft)</h3>
-            <p class="p-desc">Powder-coated welded steel rail panel.</p>
-            <div class="p-meta">
-              <span class="p-price">$289</span>
-            </div>
-            <div class="p-cta">
-              <a class="btn btn-primary" href="#">Buy Now</a>
-              <a class="btn btn-ghost" href="contact.html?product=rail">Request Custom</a>
-            </div>
-          </div>
-        </article>
+<article class="product"
+         data-cat="rails"
+         data-id="rail-6ft"
+         data-name='Steel Rail Panel (6 ft)'
+         data-price="289"
+         data-has-addons="false">
+
+  <div class="p-media">
+    <img src="folder.images/6steel_rail_panel1.PNG" alt="Steel rail panel">
+  </div>
+
+  <div class="p-body">
+    <h3 class="p-title">Steel Rail Panel (6 ft)</h3>
+    <p class="p-desc">Powder-coated welded steel rail panel.</p>
+
+    <div class="p-meta">
+      <span class="p-price">$289</span>
+    </div>
+
+    <div class="p-cta">
+      <button type="button" class="btn btn-primary js-buy">Buy Now</button>
+      <a class="btn btn-ghost" href="contact.html?product=rail">Request Custom</a>
+    </div>
+  </div>
+</article>
+
 
         <!-- Gate -->
-        <article class="product" data-cat="gates">
-          <div class="p-media">
-            <img src="folder.images/12ranch_gate1.PNG" alt="Custom welded ranch gate">
-          </div>
-          <div class="p-body">
-            <h3 class="p-title">Ranch Gate (12 ft)</h3>
-            <p class="p-desc">Durable ranch gate with custom logo options.</p>
-            <div class="p-meta">
-              <span class="p-price">From $1,250</span>
-            </div>
-            <div class="p-cta">
-              <a class="btn btn-primary" href="contact.html?product=gate">Get a Quote</a>
-              <a class="btn btn-ghost" href="gallery.html">View Examples</a>
-            </div>
-          </div>
-        </article>
+<article class="product"
+         data-cat="gates"
+         data-id="ranch-gate-12"
+         data-name='Ranch Gate (12 ft)'
+         data-price="1250"
+         data-has-addons="true">
+
+  <div class="p-media">
+    <img src="folder.images/12ranch_gate1.PNG" alt="Custom welded ranch gate">
+  </div>
+
+  <div class="p-body">
+    <h3 class="p-title">Ranch Gate (12 ft)</h3>
+    <p class="p-desc">Durable ranch gate with custom logo options.</p>
+
+    <div class="p-meta">
+      <span class="p-price">From $1,250</span>
+    </div>
+
+    <div class="p-cta">
+      <button type="button" class="btn btn-primary js-buy">Buy / Customize</button>
+      <a class="btn btn-ghost" href="gallery.html">View Examples</a>
+    </div>
+  </div>
+</article>
+
 
         <!-- Yard Art -->
-        <article class="product" data-cat="other">
-          <div class="p-media">
-            <img src="folder.images/steel_yard_art1.PNG" alt="Steel yard art piece">
-          </div>
-          <div class="p-body">
-            <h3 class="p-title">Steel Yard Art</h3>
-            <p class="p-desc">Plasma-cut steel art in multiple finishes.</p>
-            <div class="p-meta">
-              <span class="p-price">$95–$295</span>
-            </div>
-            <div class="p-cta">
-              <a class="btn btn-primary" href="#">Buy Now</a>
-              <a class="btn btn-ghost" href="contact.html?product=yardart">Request Custom</a>
-            </div>
-          </div>
-        </article>
+<article class="product"
+         data-cat="other"
+         data-id="yard-art"
+         data-name="Steel Yard Art"
+         data-price="95"
+         data-has-addons="false">
+
+  <div class="p-media">
+    <img src="folder.images/steel_yard_art1.PNG" alt="Steel yard art piece">
+  </div>
+
+  <div class="p-body">
+    <h3 class="p-title">Steel Yard Art</h3>
+    <p class="p-desc">Plasma-cut steel art in multiple finishes.</p>
+
+    <div class="p-meta">
+      <span class="p-price">$95–$295</span>
+    </div>
+
+    <div class="p-cta">
+      <button type="button" class="btn btn-primary js-buy">Buy Now</button>
+      <a class="btn btn-ghost" href="contact.html?product=yardart">Request Custom</a>
+    </div>
+  </div>
+</article>
+
 
       </div>
     </div>
   </section>
 
   <!-- Footer (reuse your footer include) -->
+
+
+
+  <!-- Add-on Modal -->
+  <div class="modal-backdrop" id="addonModal" aria-hidden="true">
+    <div class="modal">
+      <button class="modal-close" id="addonClose" aria-label="Close">&times;</button>
+      <h2 id="addonTitle">Customize your item</h2>
+      <p class="modal-subtitle">Choose optional upgrades for this product.</p>
+
+      <form id="addonForm">
+        <div id="addonList" class="addon-list">
+          <!-- JS will inject add-on options here -->
+        </div>
+
+        <button type="button" class="btn btn-primary" id="addonAddToCart">
+          Add to Cart
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer" id="cartDrawer">
+    <button class="cart-toggle" id="cartToggle">
+      Cart (<span id="cartCount">0</span>)
+    </button>
+
+    <div class="cart-panel" id="cartPanel">
+      <h2>Your Cart</h2>
+
+      <ul class="cart-items" id="cartItems">
+        <li class="cart-empty">Your cart is empty.</li>
+      </ul>
+
+      <div class="cart-summary">
+        <span>Total:</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+
+      <a href="contact.html" class="btn btn-primary btn-checkout" id="cartCheckout">
+        Request Order
+      </a>
+    </div>
+  </div>
+
+<div id="site-footer"></div>
+
 
 </body>
 </html>

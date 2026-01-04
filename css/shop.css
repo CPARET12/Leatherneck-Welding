@@ -1,12 +1,4 @@
-.navbar {
-  background: rgba(0,0,0,0.85);
-  color: #fff;
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-}
+
 
 /* ===================== Shop Layout ===================== */
 .products-grid {
@@ -106,4 +98,200 @@
 .shop-tab.is-active {
   background: var(--brand, #e30f0f);
   color: #fff;
+}
+
+
+
+
+
+
+/* ===================== Add-on Modal ===================== */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal-backdrop.is-visible {
+  display: flex;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 0.8rem;
+  max-width: 480px;
+  width: 90%;
+  padding: 1.5rem;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  border: none;
+  background: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-subtitle {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.addon-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.addon-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.addon-label {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.addon-price {
+  font-weight: 600;
+}
+
+/* ===================== Cart Drawer ===================== */
+
+.cart-drawer {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1900;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.cart-toggle {
+  background: var(--brand, #e30f0f);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.cart-panel {
+  margin-top: 0.5rem;
+  background: #fff;
+  border-radius: 0.8rem;
+  width: 300px;
+  max-height: 360px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  padding: 1rem;
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cart-panel.is-open {
+  display: flex;
+}
+
+.cart-panel h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+}
+
+.cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  overflow-y: auto;
+  font-size: 0.85rem;
+}
+
+.cart-empty {
+  text-align: center;
+  color: #666;
+  padding: 0.5rem 0;
+}
+
+.cart-item {
+  border-bottom: 1px solid #eee;
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cart-item-main {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.cart-item-name {
+  flex: 1;
+}
+
+.cart-item-price {
+  font-weight: 600;
+}
+
+.cart-item-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.25rem;
+}
+
+.cart-item-controls button {
+  border: 1px solid #ddd;
+  background: #f7f7f7;
+  border-radius: 4px;
+  padding: 0.15rem 0.4rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.cart-summary {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.btn-checkout {
+  margin-top: 0.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+.btn-checkout.is-disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+
+
+/* Push Shop title below injected header */
+.section:first-of-type {
+  padding-top: 8.5rem;
+}
+.shop-header {
+  padding-top: 8.5rem;
 }

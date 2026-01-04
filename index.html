@@ -9,43 +9,27 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="partials/site.css" />
+  <link rel="stylesheet" href="partials/header.css" />
+  <link rel="stylesheet" href="partials/footer.css" />
+
+
   <link rel="icon" href="favicon.ico" />
+
+  <script src="partials/header.js" defer></script>
+  <script src="partials/footer.js" defer></script>
+  <script src="js/home.js" defer></script>
 </head>
-<script src="js/home.js" defer></script>
+
+
+
 <body>
 
-  <!-- Top Bar -->
-  <div class="topbar">
-    <div class="container">
-      <span>Veteran Owned • Licensed & Insured • BBB</span>
-      <a class="phone" href="tel:18066812585">(806) 681‑2585</a>
-    </div>
-  </div>
+  <div id="site-header"></div>
 
-  <!-- Hero (nav inside) -->
-<section class="hero">
-  <header class="navbar">
-    <div class="container nav-inner">
-      <a href="home.html" class="brand">Leatherneck Welding LLC</a>
-      <nav class="links">
-        <a href="home.html" class="active">Home</a>
-        <div class="dropdown">
-          <a href="services.html" class="dropbtn">Services ▾</a>
-          <div class="dropdown-content">
-            <a href="residential.html">Residential</a>
-            <a href="commercial.html">Commercial</a>
-            <a href="agriculture.html">Agriculture</a>
-            <a href="fencing.html">Fencing</a>
-            <a href="other-services.html">Other Services</a>
-          </div>
-        </div>
-        <a href="shop.html">Shop</a>
-        <a href="About.html">About</a>
-        <a href="gallery.html">Gallery</a>
-      </nav>
-    </div>
-  </header>
-</section> <!-- ✅ hero closes here -->
+  <!-- Hero background section -->
+  <section class="hero"></section>
+
 
 
 
@@ -59,17 +43,17 @@
       <article class="card barndominiums">
         <h3>Barndominiums</h3>
         <p>Open-span layouts, energy-smart envelopes, durable finishes.</p>
-        <a class="link" href="residential.html#barndominiums">Learn more ›</a>
+        <a class="link" href="residential.html">Learn more ›</a>
       </article>
       <article class="card metal-buildings">
         <h3>Metal Buildings</h3>
         <p>Shops, garages, and commercial structures engineered for daily use.</p>
-        <a class="link" href="commercial.html#buildings">Learn more ›</a>
+        <a class="link" href="agriculture.html">Learn more ›</a>
       </article>
       <article class="card ranch-fencing">
         <h3>Ranch & Farm Fencing</h3>
         <p>Pipe, cable, horse, and perimeter fencing that holds up.</p>
-        <a class="link" href="agriculture.html#fencing">Learn more ›</a>
+        <a class="link" href="fencing.html">Learn more ›</a>
       </article>
       <article class="card custom-fabrication">
         <h3>Custom Fabrication</h3>
@@ -82,17 +66,17 @@
       <article class="card residential">
         <h3>Residential</h3>
         <p>Custom barndominiums, home shops, and backyard fencing solutions.</p>
-        <a class="link" href="residential.html#barndominiums">Learn more ›</a>
+        <a class="link" href="residential.html">Learn more ›</a>
       </article>
       <article class="card commercial">
         <h3>Commercial</h3>
         <p>Durable steel buildings, shops, business structures built to last, etc.</p>
-        <a class="link" href="commercial.html#buildings">Learn more ›</a>
+        <a class="link" href="commercial.html">Learn more ›</a>
       </article>
       <article class="card agriculture">
         <h3>Agriculture</h3>
         <p>Fencing, barns, and ranch infrastructure for farms and livestock.</p>
-        <a class="link" href="agriculture.html#fencing">Learn more ›</a>
+        <a class="link" href="agriculture.html">Learn more ›</a>
       </article>
     </div>
   </div>
@@ -168,39 +152,9 @@
 
 
  
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div>
-        <strong>Leatherneck Welding LLC</strong>
-        <p>Veteran‑owned welding contractor serving North Texas, Texas & Oklahoma.</p>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul class="list">
-          <li><a href="tel:18066812585">(806) 681‑2585</a></li>
-          <li><a href="mailto:leads@leatherneckwelding.com">leads@leatherneckwelding.com</a></li>
-          <li>P.O. Box 367 Gainesville, TX 76241</li>
-          <li>Hours: Mon–Sun, 7:00am–7:00pm</li>
-        </ul>
-      </div>
-      <div>
-        <h4>Quick Links</h4>
-        <ul class="list">
-          <li><a href="residential.html">Residential</a></li>
-          <li><a href="commercial.html">Commercial</a></li>
-          <li><a href="agriculture.html">Agriculture</a></li>
-          <li><a href="other-services.html">Other Services</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="subfooter">
-      <div class="container">
-        <small>© <span id="year"></span> Leatherneck Welding LLC. All rights reserved.</small>
-      </div>
-    </div>
-  </footer>
+  
+
+  <div id="site-footer"></div>
+
 </body>
 </html>

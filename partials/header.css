@@ -1,0 +1,135 @@
+/* ===================== HEADER PARTIAL STYLES ===================== */
+
+/* Top Bar */
+.topbar {
+  background: linear-gradient(90deg, var(--muted), #938e88);
+  font-size: .92rem;
+  color: #5b463a;
+}
+.topbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .4rem 0;
+}
+.topbar .phone {
+  color: #d72638 !important;
+  font-weight: 700;
+}
+.topbar .phone:hover {
+  text-decoration: underline;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.28);   /* see-through */
+  backdrop-filter: blur(2px);        /* soft blur */
+  border: none;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .8rem 0;
+}
+
+#site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+body {
+  position: relative;
+}
+
+
+.brand {
+  font-weight: 800;
+  letter-spacing: .2px;
+  color: #e9eef5;
+  text-shadow: 0 1px 2px rgba(0,0,0,.35);
+}
+.brand:hover {
+  color: #ffffff;
+}
+
+/* Nav Links */
+.links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.links a {
+  color: #cfe2ff;
+  padding: .5rem .7rem;
+  border-radius: .7rem;
+}
+
+.links a:hover {
+  background: rgba(255,255,255,.07);
+}
+
+.links .active {
+  color: #fff !important;
+  font-weight: 600;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  padding: .5rem .7rem;
+  border-radius: .7rem;
+  color: #cfe2ff;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: #f3dfc2;
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: .7rem 1rem;
+  color: #4a3a31;
+}
+
+.dropdown-content a:hover {
+  background: rgba(0,0,0,.06);
+  color: #2f2420;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background: rgba(255,255,255,.07);
+  color: #4a3a31;
+}
+
+
+
+.links a.contact {
+  background: var(--brand);
+  color: #fff;
+  padding: .45rem .7rem;
+  border-radius: .5rem;
+}

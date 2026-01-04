@@ -1,15 +1,11 @@
 /* ============ Tabs ============ */
 .section.section-tight { padding-top: 1rem; padding-bottom: 1rem; }
 
-.navbar {
-  background: rgba(0,0,0,0.85);
-  color: #fff;
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
+/* Prevent header overlap on pages with injected header */
+.section:first-of-type {
+  padding-top: 8.5rem;
 }
+
 
 .tabs {
   display: flex;

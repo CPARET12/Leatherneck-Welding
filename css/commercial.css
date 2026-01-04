@@ -1,0 +1,175 @@
+/* css/commercial.css */
+
+/* Hero layout */
+.page-hero{
+  background: var(--bg);
+  padding: 2.75rem 0 1.5rem;
+}
+
+.kicker{
+  color: var(--brand);
+  font-weight: 800;
+  letter-spacing: .12em;
+  font-size: .85rem;
+  margin: 0 0 .35rem;
+}
+
+.page-hero h1{
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  line-height: 1.05;
+  margin: 0 0 1rem;
+}
+
+.sub{
+  max-width: 62ch;
+  margin: 0 0 1.25rem;
+  color: var(--ink);
+}
+
+.col-media{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-img{
+  width: 100%;
+  max-width: 620px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 4px solid var(--brand);
+  box-shadow: 0 16px 40px rgba(0,0,0,.20);
+}
+
+/* Badges (same style as you’ve used elsewhere) */
+.badges{
+  margin-top: 1.25rem;
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+
+.badge{
+  display: inline-flex;
+  align-items: center;
+  padding: .55rem .9rem;
+  background: rgba(255,255,255,.55);
+  border: 1px solid rgba(0,0,0,.10);
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+/* Conveyor helper note */
+.muted-note{
+  margin: .75rem 0 0;
+  color: rgba(0,0,0,.6);
+  font-size: .95rem;
+}
+
+/* Services */
+.lead-text{
+  margin-top: .5rem;
+  color: rgba(0,0,0,.65);
+  max-width: 75ch;
+}
+
+.service-grid{
+  margin-top: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.1rem;
+}
+
+.svc{
+  background: rgba(255,255,255,.55);
+  border: 1px solid rgba(0,0,0,.10);
+  border-radius: 16px;
+  padding: 1.2rem;
+  box-shadow: 0 10px 26px rgba(0,0,0,.10);
+}
+
+.svc h3{
+  margin: 0 0 .35rem;
+}
+
+.svc p{
+  margin: 0 0 .75rem;
+  color: rgba(0,0,0,.70);
+}
+
+.svc ul{
+  margin: 0;
+  padding-left: 1.1rem;
+  color: rgba(0,0,0,.75);
+}
+
+.svc li{ margin: .35rem 0; }
+
+/* CTA band */
+.cta-band{
+  background: linear-gradient(180deg, rgba(194,109,47,.08), rgba(0,0,0,.02)), var(--muted);
+  border-top: 1px solid rgba(0,0,0,.06);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+.cta-split{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cta-actions{
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .hero-img{ height: 320px; }
+  .service-grid{ grid-template-columns: 1fr; }
+  .cta-split{ flex-direction: column; align-items: flex-start; }
+}
+
+
+/* --- HARD FORCE the commercial hero layout --- */
+.page-hero > .container.hero-grid{
+  display: grid !important;
+  grid-template-columns: 1.15fr 1fr !important;
+  gap: 2rem !important;
+  align-items: start !important;
+}
+
+.page-hero .col-media{
+  display: flex !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+}
+
+.page-hero .hero-img{
+  width: 100% !important;
+  max-width: 620px !important;
+  height: 380px !important;
+  object-fit: cover !important;
+  border-radius: 18px !important;
+  border: 4px solid var(--brand) !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,.20) !important;
+}
+
+@media (max-width: 900px){
+  .page-hero > .container.hero-grid{
+    grid-template-columns: 1fr !important;
+  }
+  .page-hero .hero-img{
+    height: 320px !important;
+  }
+}
+
+
+
+/* === Commercial Hero Offset (below fixed header) === */
+.page-hero{
+  padding-top: 8rem; /* adjust as needed */
+}

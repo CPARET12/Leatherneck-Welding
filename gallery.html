@@ -7,40 +7,20 @@
 
   <!-- Fonts & Base CSS (reuse your site CSS first) -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/home.css" />
+
+  <link rel="stylesheet" href="partials/site.css" />
   <link rel="stylesheet" href="css/gallery.css" />
+  <link rel="stylesheet" href="partials/header.css" />
+  <link rel="stylesheet" href="partials/footer.css" />
+
+  <script src="partials/header.js" defer></script>
+  <script src="partials/footer.js" defer></script>
   <script src="js/gallery.js" defer></script>
 </head>
 <body>
 
-  <!-- Topbar + Navbar (optional—reuse your site header here) -->
-  <div class="topbar">
-    <div class="container">
-      <span>Veteran Owned • Licensed & Insured • BBB</span>
-      <a class="phone" href="tel:18066812585">(806) 681-2585</a>
-    </div>
-  </div>
+<div id="site-header"></div>
 
-  <header class="navbar">
-    <div class="container nav-inner">
-      <a href="home.html" class="brand">Leatherneck Welding LLC</a>
-      <nav class="links">
-        <a href="index.html">Home</a>
-        <div class="dropdown">
-          <a href="services.html" class="dropbtn">Services ▾</a>
-          <div class="dropdown-content">
-            <a href="residential.html">Residential</a>
-            <a href="commercial.html">Commercial</a>
-            <a href="agriculture.html">Agriculture</a>
-            <a href="fencing.html">Fencing</a>
-            <a href="other-services.html">Other Services</a>
-          </div>
-        <a href="shop.html">Shop</a>
-        <a class="active" href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
 
   <!-- Page Title -->
   <section class="section">
@@ -161,6 +141,9 @@
 
   <!-- Footer (optional—reuse your site footer) -->
 
-  <script src="../js/gallery.js" defer></script>
+
+
+  <div id="site-footer"></div>
+
 </body>
 </html>

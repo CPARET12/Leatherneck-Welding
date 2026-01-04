@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | Leatherneck Welding LLC</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="partials/site.css" />
+  <link rel="stylesheet" href="partials/header.css" />
+  <link rel="stylesheet" href="partials/footer.css" />
+
+  <link rel="stylesheet" href="css/contact.css" />
+
+  <script src="partials/header.js" defer></script>
+  <script src="partials/footer.js" defer></script>
+  <script src="js/contact.js" defer></script>
+
+  <link rel="icon" href="favicon.ico" />
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <header class="contact-hero">
+    <div class="container">
+      <p class="contact-kicker">Contact</p>
+      <h1 class="contact-title">Request a Quote or Schedule Instantly</h1>
+      <p class="contact-subtitle">
+        Pick a date and time, choose Phone Call or On-Site Quote, then submit your project details.
+      </p>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container contact-grid">
+
+      <!-- LEFT: Schedule -->
+      <!-- LEFT: Schedule -->
+<section class="cardx" aria-label="Schedule instantly">
+  <h2 class="cardx__title">Schedule Instantly</h2>
+  <p class="cardx__hint">Choose the appointment type, then select a date and time.</p>
+
+  <div class="sched">
+
+    <!-- 1) Appointment Type FIRST -->
+    <div class="sched-row">
+      <label class="sched-label" for="eventType">Appointment Type</label>
+      <select id="eventType" class="sched-input">
+        <option value="">Select…</option>
+        <option value="phone">📞 Phone Call (15 min)</option>
+        <option value="onsite">🚜 On-Site Quote (60 min)</option>
+      </select>
+      <div id="typeHint" class="hint"></div>
+    </div>
+
+    <!-- 2) Date SECOND -->
+    <div class="sched-row">
+      <label class="sched-label" for="schedDate">Select Date</label>
+      <input id="schedDate" type="date" class="sched-input" />
+    </div>
+
+    <!-- 3) Time THIRD -->
+    <div class="sched-row">
+      <div class="sched-label">Select Time</div>
+      <div id="timeSlots" class="slots" aria-live="polite">
+        <div class="slots__empty">Choose an appointment type and date to see times.</div>
+      </div>
+    </div>
+
+    <button id="openDetails" class="btn btn-primary" type="button" disabled>
+      Schedule Event
+    </button>
+
+    <div id="schedMsg" class="msg" role="status" aria-live="polite"></div>
+  </div>
+</section>
+
+
+      <!-- RIGHT: Quick contact info -->
+      <section class="cardx" aria-label="Contact info">
+        <h2 class="cardx__title">Prefer to Reach Out Directly?</h2>
+        <p class="cardx__hint">Call or email — we respond quickly.</p>
+
+        <div class="info-grid">
+          <div class="info-item">
+            <strong>Phone</strong><br />
+            <a href="tel:18066812585">(806) 681-2585</a>
+          </div>
+          <div class="info-item">
+            <strong>Email</strong><br />
+            <a href="mailto:leads@leatherneckwelding.com">leads@leatherneckwelding.com</a>
+          </div>
+          <div class="info-item">
+            <strong>Service Area</strong><br />
+            North Texas & Oklahoma
+          </div>
+          <div class="info-item">
+            <strong>Hours</strong><br />
+            Mon–Fri 8:00am–5:00pm
+          </div>
+        </div>
+
+        <div class="note">
+          After scheduling, we’ll confirm details and next steps.
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div id="modalBackdrop" class="modal-backdrop" hidden></div>
+
+  <div id="detailsModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal__panel">
+      <div class="modal__head">
+        <h3 id="modalTitle">Confirm Your Appointment</h3>
+        <button id="closeModal" class="modal__close" aria-label="Close">✕</button>
+      </div>
+
+      <div class="modal__summary" id="modalSummary"></div>
+
+      <form id="detailsForm" class="form" novalidate>
+        <div class="form-grid">
+          <div class="field">
+            <label for="fullName">Full Name</label>
+            <input id="fullName" type="text" required />
+            <small class="err" data-err="fullName"></small>
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel" required />
+            <small class="err" data-err="phone"></small>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" required />
+            <small class="err" data-err="email"></small>
+          </div>
+
+          <div class="field">
+            <label for="service">Service Type</label>
+            <select id="service" required>
+              <option value="">Select…</option>
+              <option>Barndominium / Steel Framing</option>
+              <option>Metal Building / Shop</option>
+              <option>Fencing / Gates</option>
+              <option>Agriculture / Ranch Work</option>
+              <option>Custom Fabrication / Repair</option>
+              <option>Other</option>
+            </select>
+            <small class="err" data-err="service"></small>
+          </div>
+
+          <div class="field field--full" id="addressWrap">
+            <label for="address">Job Address (required for On-Site)</label>
+            <input id="address" type="text" placeholder="Street, City, State, Zip" />
+            <small class="err" data-err="address"></small>
+          </div>
+
+          <div class="field">
+            <label for="dimensions">Rough Dimensions / Linear Feet</label>
+            <input id="dimensions" type="text" placeholder="Example: 800 ft fence / 30x40 building" required />
+            <small class="err" data-err="dimensions"></small>
+          </div>
+
+          <div class="field">
+            <label for="timeline">Timeline</label>
+            <select id="timeline" required>
+              <option value="">Select…</option>
+              <option>ASAP</option>
+              <option>1–3 weeks</option>
+              <option>1–2 months</option>
+              <option>Planning / Budgeting</option>
+            </select>
+            <small class="err" data-err="timeline"></small>
+          </div>
+
+          <div class="field field--full">
+            <label for="notes">Project Notes</label>
+            <textarea id="notes" rows="5" required placeholder="Anything that helps: gate width, material preference, terrain, photos available, etc."></textarea>
+            <small class="err" data-err="notes"></small>
+          </div>
+        </div>
+
+        <div class="modal__actions">
+          <button type="button" class="btn btn-ghost" id="cancelBooking">Cancel</button>
+          <button type="submit" class="btn btn-primary">Confirm Booking</button>
+        </div>
+
+        <div id="confirmMsg" class="msg msg--ok" hidden></div>
+      </form>
+    </div>
+  </div>
+
+  <div id="site-footer"></div>
+
+</body>
+</html>
