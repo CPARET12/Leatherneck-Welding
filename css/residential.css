@@ -2,6 +2,9 @@
 
 /* ===================== Hero (content) ===================== */
 
+/* ===================== Mobile Header Offset Fix ===================== */
+
+
 .res-hero {
   padding-top: 6.5rem;
 }
@@ -266,4 +269,12 @@ input:focus, select:focus, textarea:focus{ border-color:var(--brand); box-shadow
   .benefits__visual{ min-height: 300px; }
   .frame--a{ height: 240px; }
   .frame--b{ height: 180px; }
+}
+
+
+/* Mobile: push hero below fixed header */
+@media (max-width: 768px){
+  .res-hero{
+    padding-top:8.5rem;   /* adjust up/down if needed */
+  }
 }

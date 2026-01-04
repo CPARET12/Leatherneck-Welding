@@ -173,3 +173,11 @@
 .page-hero{
   padding-top: 8rem; /* adjust as needed */
 }
+
+
+/* Mobile: push commercial hero below fixed header */
+@media (max-width: 768px){
+  .page-hero{
+    padding-top: 8.5rem;   /* adjust if needed */
+  }
+}

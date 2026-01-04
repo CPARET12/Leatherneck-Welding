@@ -10,6 +10,14 @@
   border-image: linear-gradient(to right, #333, #666, #333) 1;
 
 }
+/* ===================== HERO – Mobile Fix ===================== */
+@media (max-width: 768px){
+  .hero{
+    min-height: 320px;
+    background-attachment: scroll; /* critical */
+    background-position: center top;
+  }
+}
 
 
 
