@@ -2,7 +2,7 @@
 
 /* Push content below injected header */
 .ag-hero {
-  padding-top: 8.5rem; /* adjust if needed */
+  padding-top: 11rem; /* adjust if needed */
   background: linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,0)), var(--bg);
 }
 

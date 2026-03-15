@@ -1,7 +1,7 @@
 /* Contact page - scheduling UI */
 
 .contact-hero{
-  padding-top: 8.5rem;
+  padding-top: 11rem;
   padding-bottom: 1.25rem;
   background: linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,0)), var(--bg);
 }

@@ -89,3 +89,119 @@ window.addEventListener('keydown', (e) => {
     panel.setAttribute('aria-hidden', 'true');
   }
 });
+
+
+// ===============================
+// More Images Modal
+// ===============================
+const modal = document.getElementById('galleryModal');
+const modalGrid = document.getElementById('galleryModalGrid');
+const modalTitle = document.getElementById('galleryModalTitle');
+const modalCloseBtn = document.getElementById('galleryModalClose');
+
+const projectImages = {
+  "barndo-open-span": {
+    title: "Barndominium – More Images",
+    images: [
+      "folder.images/residential4.png",
+      "folder.images/residential5.png"
+    ]
+  },
+  "steel-shop-40x60": {
+    title: "Steel Shop – More Images",
+    images: [
+      "folder.images/commercial3.jpg",
+      "folder.images/commercial4.png"
+    ]
+  },
+
+  "ranch-fence-pipe-cable": {
+  title: "Ranch Fence – More Images",
+  images: [
+    "folder.images/agriculture7.JPG",
+    "folder.images/agriculture8.JPG",
+    "folder.images/agriculture9.JPG",
+    "folder.images/agriculture12.JPG"
+
+  ]
+},
+
+  "custom-deck-railing": {
+    title: "Custom Deck Railing – More Images",
+    images: [
+      "folder.images/fencing18.JPG",
+    "folder.images/fencing3.JPG",
+    "folder.images/fencing5.JPG",
+    "folder.images/fencing9.JPG",
+    "folder.images/fencing10.JPG",
+    "folder.images/fencing11.JPG",
+    "folder.images/fencing15.JPG",
+    "folder.images/fencing19.png",
+    "folder.images/fencing20.JPG",
+    "folder.images/fencing21.JPG"
+      ]
+  },
+  "gate-fabrication-repair": {
+    title: "Gate Fabrication & Repair – More Images",
+    images: [
+      "folder.images/gate2.png",
+      "folder.images/gate3.png",
+      "folder.images/gate4.jpg",
+      "folder.images/gate5.png",
+      "folder.images/gate8.png",
+      "folder.images/gate9.png",
+      "folder.images/gate10.png",
+      "folder.images/gate11.png",
+      "folder.images/gate12.png",
+      "folder.images/gate13.png",
+      "folder.images/gate14.jpg",
+      "folder.images/gate15.png",
+      "folder.images/gate16.jpg",
+      "folder.images/gate17.png",
+      "folder.images/gate18.jpg",
+      "folder.images/gate19.png"
+    ]
+  }
+};
+
+function openGalleryModal(projectKey) {
+  const project = projectImages[projectKey];
+  if (!project) return;
+
+  modalTitle.textContent = project.title;
+  modalGrid.innerHTML = project.images.map((src, index) => `
+    <div class="gallery-modal__item">
+      <img src="${src}" alt="${project.title} image ${index + 1}">
+    </div>
+  `).join('');
+
+  modal.classList.add('is-open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeGalleryModal() {
+  modal.classList.remove('is-open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.g-more').forEach(btn => {
+  btn.addEventListener('click', () => {
+    openGalleryModal(btn.dataset.project);
+  });
+});
+
+modalCloseBtn.addEventListener('click', closeGalleryModal);
+
+modal.addEventListener('click', (e) => {
+  if (e.target.hasAttribute('data-close-modal')) {
+    closeGalleryModal();
+  }
+});
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+    closeGalleryModal();
+  }
+});

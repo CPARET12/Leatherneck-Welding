@@ -2,7 +2,7 @@
 
 /* Push below injected header */
 .about-hero {
-  padding-top: 8.5rem;
+  padding-top: 11rem;
   padding-bottom: 2.5rem;
   background: linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,0)), var(--bg);
 }

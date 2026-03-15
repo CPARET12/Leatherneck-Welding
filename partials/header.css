@@ -28,12 +28,16 @@
   backdrop-filter: blur(2px);        /* soft blur */
   border: none;
 }
-
+.navbar .container {
+  padding-top: 0;
+  padding-bottom: 0;
+}
 .nav-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: .8rem 0;
+  padding: 0;
+  min-height: 0;
 }
 
 #site-header {
@@ -53,10 +57,30 @@ body {
   letter-spacing: .2px;
   color: #e9eef5;
   text-shadow: 0 1px 2px rgba(0,0,0,.35);
+    line-height: 0;
+
 }
 .brand:hover {
   color: #ffffff;
 }
+
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  text-shadow: none;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+}
+
+.brand-logo {
+  display: block;
+  height: 135px;
+  width: auto;
+}
+
+
+
 
 /* Nav Links */
 .links {
@@ -67,7 +91,7 @@ body {
 
 .links a {
   color: #cfe2ff;
-  padding: .5rem .7rem;
+  padding: .35rem .6rem;
   border-radius: .7rem;
 }
 
@@ -87,7 +111,7 @@ body {
 }
 
 .dropbtn {
-  padding: .5rem .7rem;
+  padding: .35rem .6rem;
   border-radius: .7rem;
   color: #cfe2ff;
   display: inline-block;
@@ -170,6 +194,9 @@ body {
 
   .nav-toggle{
     display:inline-flex;
+  }
+    .brand-logo{
+    height: 56px;
   }
 
   /* hide desktop hover dropdown behavior on mobile */
