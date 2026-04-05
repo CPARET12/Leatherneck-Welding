@@ -339,19 +339,27 @@
 
     saveAppointments(appts);
 
-        try {
-      const formData = new FormData();
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+
+    submitBtn.textContent = "Sending...";
+    submitBtn.disabled = true;
+
+    try {
+      const formData = new FormData(form);
 
       formData.append("access_key", "737de756-8692-49e2-bc4a-101e358880a8");
       formData.append("subject", `New ${selectedType === "phone" ? "Phone Call" : "On-Site Quote"} - ${selectedDate} ${selectedTime}`);
-      formData.append("from_name", f.fullName.value.trim());
-      formData.append("email", f.email.value.trim());
       formData.append("replyto", f.email.value.trim());
-      formData.append("phone", f.phone.value.trim());
       formData.append("bccemail", "charles.e.paret@gmail.com");
 
-      formData.append("message", `
-Appointment Type: ${selectedType === "phone" ? "Phone Call" : "On-Site Quote"}
+      formData.append("appointmentType", selectedType === "phone" ? "Phone Call" : "On-Site Quote");
+      formData.append("appointmentDate", selectedDate);
+      formData.append("appointmentTime", selectedTime);
+
+      formData.append(
+        "message",
+        `Appointment Type: ${selectedType === "phone" ? "Phone Call" : "On-Site Quote"}
 Date: ${selectedDate}
 Time: ${selectedTime}
 
@@ -367,24 +375,27 @@ Dimensions: ${f.dimensions.value.trim()}
 Timeline: ${f.timeline.value.trim()}
 
 Notes:
-${f.notes.value.trim()}
-      `);
+${f.notes.value.trim()}`
+      );
 
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData
       });
 
-      const result = await response.json();
+      const data = await response.json();
 
-      if (!response.ok || !result.success) {
-        throw new Error(result.message || "Failed to send appointment.");
+      if (!response.ok || !data.success) {
+        throw new Error(data.message || "Failed to send appointment.");
       }
     } catch (err) {
       confirmMsg.hidden = false;
-      confirmMsg.textContent = "❌ Appointment was saved, but email delivery failed. Please call us directly.";
+      confirmMsg.textContent = `❌ Appointment was saved, but email delivery failed: ${err.message}`;
       return;
-    } 
+    } finally {
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    }
 
     confirmMsg.hidden = false;
     confirmMsg.textContent = "✅ Scheduled! We’ll follow up to confirm details.";

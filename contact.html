@@ -128,25 +128,25 @@
         <div class="form-grid">
           <div class="field">
             <label for="fullName">Full Name</label>
-            <input id="fullName" type="text" required />
+<input id="fullName" name="fullName" type="text" required />
             <small class="err" data-err="fullName"></small>
           </div>
 
           <div class="field">
             <label for="phone">Phone</label>
-            <input id="phone" type="tel" required />
+            <input id="phone" name="phone" type="tel" required />
             <small class="err" data-err="phone"></small>
           </div>
 
           <div class="field">
             <label for="email">Email</label>
-            <input id="email" type="email" required />
+            <input id="email" name="email" type="email" required />
             <small class="err" data-err="email"></small>
           </div>
 
           <div class="field">
             <label for="service">Service Type</label>
-            <select id="service" required>
+            <select id="service" name="service" required>
               <option value="">Select…</option>
               <option>Barndominium / Steel Framing</option>
               <option>Metal Building / Shop</option>
@@ -160,19 +160,19 @@
 
           <div class="field field--full" id="addressWrap">
             <label for="address">Job Address (required for On-Site)</label>
-            <input id="address" type="text" placeholder="Street, City, State, Zip" />
+            <input id="address" name="address" type="text" placeholder="Street, City, State, Zip" />
             <small class="err" data-err="address"></small>
           </div>
 
           <div class="field">
             <label for="dimensions">Rough Dimensions / Linear Feet</label>
-            <input id="dimensions" type="text" placeholder="Example: 800 ft fence / 30x40 building" required />
+            <input id="dimensions" name="dimensions" type="text" placeholder="Example: 800 ft fence / 30x40 building" required />
             <small class="err" data-err="dimensions"></small>
           </div>
 
           <div class="field">
             <label for="timeline">Timeline</label>
-            <select id="timeline" required>
+            <select id="timeline" name="timeline" required>
               <option value="">Select…</option>
               <option>ASAP</option>
               <option>1–3 weeks</option>
@@ -184,7 +184,7 @@
 
           <div class="field field--full">
             <label for="notes">Project Notes</label>
-            <textarea id="notes" rows="5" required placeholder="Anything that helps: gate width, material preference, terrain, photos available, etc."></textarea>
+            <textarea id="notes" name="notes" rows="5" required placeholder="Anything that helps: gate width, material preference, terrain, photos available, etc."></textarea>
             <small class="err" data-err="notes"></small>
           </div>
         </div>
