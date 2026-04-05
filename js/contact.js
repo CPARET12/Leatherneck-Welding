@@ -351,7 +351,6 @@
       formData.append("access_key", "737de756-8692-49e2-bc4a-101e358880a8");
       formData.append("subject", `New ${selectedType === "phone" ? "Phone Call" : "On-Site Quote"} - ${selectedDate} ${selectedTime}`);
       formData.append("replyto", f.email.value.trim());
-      formData.append("bccemail", "charles.e.paret@gmail.com");
 
       formData.append("appointmentType", selectedType === "phone" ? "Phone Call" : "On-Site Quote");
       formData.append("appointmentDate", selectedDate);
