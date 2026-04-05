@@ -301,7 +301,7 @@
     return ok;
   }
 
-  function bookAppointment() {
+  async function bookAppointment() {
     const durationMin = CONFIG.durations[selectedType];
 
     // Re-check slot availability
@@ -338,6 +338,57 @@
     });
 
     saveAppointments(appts);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          access_key: "737de756-8692-49e2-bc4a-101e358880a8",
+          subject: `New ${selectedType === "phone" ? "Phone Call" : "On-Site Quote"} - ${selectedDate} ${selectedTime}`, //subject: "New Appointment - Leatherneck Welding",
+          replyto: f.email.value.trim(),
+          from_name: f.fullName.value.trim(),
+          email: f.email.value.trim(),
+          phone: f.phone.value.trim(),
+
+          bccemail: "charles.e.paret@gmail.com",
+
+
+          message: `
+Appointment Type: ${selectedType === "phone" ? "Phone Call" : "On-Site Quote"}
+Date: ${selectedDate}
+Time: ${selectedTime}
+
+Customer:
+Name: ${f.fullName.value.trim()}
+Phone: ${f.phone.value.trim()}
+Email: ${f.email.value.trim()}
+
+Project:
+Service: ${f.service.value.trim()}
+Address: ${addressEl.value.trim()}
+Dimensions: ${f.dimensions.value.trim()}
+Timeline: ${f.timeline.value.trim()}
+
+Notes:
+${f.notes.value.trim()}
+          `
+        })
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Failed to send appointment.");
+      }
+    } catch (err) {
+      confirmMsg.hidden = false;
+      confirmMsg.textContent = "❌ Appointment was saved, but email delivery failed. Please call us directly.";
+      return;
+    }
 
     confirmMsg.hidden = false;
     confirmMsg.textContent = "✅ Scheduled! We’ll follow up to confirm details.";
