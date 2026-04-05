@@ -339,25 +339,18 @@
 
     saveAppointments(appts);
 
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json"
-        },
-        body: JSON.stringify({
-          access_key: "737de756-8692-49e2-bc4a-101e358880a8",
-          subject: `New ${selectedType === "phone" ? "Phone Call" : "On-Site Quote"} - ${selectedDate} ${selectedTime}`, //subject: "New Appointment - Leatherneck Welding",
-          replyto: f.email.value.trim(),
-          from_name: f.fullName.value.trim(),
-          email: f.email.value.trim(),
-          phone: f.phone.value.trim(),
+        try {
+      const formData = new FormData();
 
-          bccemail: "charles.e.paret@gmail.com",
+      formData.append("access_key", "737de756-8692-49e2-bc4a-101e358880a8");
+      formData.append("subject", `New ${selectedType === "phone" ? "Phone Call" : "On-Site Quote"} - ${selectedDate} ${selectedTime}`);
+      formData.append("from_name", f.fullName.value.trim());
+      formData.append("email", f.email.value.trim());
+      formData.append("replyto", f.email.value.trim());
+      formData.append("phone", f.phone.value.trim());
+      formData.append("bccemail", "charles.e.paret@gmail.com");
 
-
-          message: `
+      formData.append("message", `
 Appointment Type: ${selectedType === "phone" ? "Phone Call" : "On-Site Quote"}
 Date: ${selectedDate}
 Time: ${selectedTime}
@@ -375,8 +368,11 @@ Timeline: ${f.timeline.value.trim()}
 
 Notes:
 ${f.notes.value.trim()}
-          `
-        })
+      `);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
       });
 
       const result = await response.json();
@@ -388,7 +384,7 @@ ${f.notes.value.trim()}
       confirmMsg.hidden = false;
       confirmMsg.textContent = "❌ Appointment was saved, but email delivery failed. Please call us directly.";
       return;
-    }
+    } 
 
     confirmMsg.hidden = false;
     confirmMsg.textContent = "✅ Scheduled! We’ll follow up to confirm details.";
