@@ -151,6 +151,164 @@
   flex-wrap: wrap;
 }
 
+/* Local Neighbor Areas Map */
+.fn-local-areas {
+  background: linear-gradient(180deg, rgba(194,109,47,.08), rgba(0,0,0,.03)), var(--bg);
+}
+
+.fn-local-areas__grid {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.fn-local-areas__content .section-title {
+  margin-bottom: .6rem;
+}
+
+.fn-local-areas__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+  margin-top: 1rem;
+}
+
+.fn-local-areas__links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .6rem .8rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,.65);
+  border: 1px solid rgba(0,0,0,.10);
+  color: var(--ink);
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 5px 14px rgba(0,0,0,.10);
+  transition: transform .2s ease, background .2s ease, color .2s ease;
+}
+
+.fn-local-areas__links a:hover {
+  transform: translateY(-2px);
+  background: var(--brand);
+  color: #fff;
+}
+
+.fn-service-map {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.2rem;
+  border: 5px solid var(--brand);
+  box-shadow: 0 12px 30px rgba(0,0,0,.20);
+  background: var(--muted);
+}
+
+.fn-service-map img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.fn-map-pin {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background: #1f1f1f;
+  border: 4px solid var(--brand);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  text-decoration: none;
+  box-shadow: 0 0 0 0 rgba(194,109,47,.55);
+  animation: fnPinPulse 2s infinite;
+  z-index: 2;
+}
+
+.fn-map-pin span {
+  position: absolute;
+  left: 50%;
+  bottom: 145%;
+  transform: translateX(-50%);
+  background: #1f1f1f;
+  color: #fff;
+  padding: .4rem .6rem;
+  border-radius: .45rem;
+  font-size: .78rem;
+  font-weight: 800;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.fn-map-pin:hover {
+  background: var(--brand);
+  border-color: #1f1f1f;
+}
+
+.fn-map-pin:hover span {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-4px);
+}
+
+@keyframes fnPinPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(194,109,47,.55);
+  }
+  70% {
+    box-shadow: 0 0 0 13px rgba(194,109,47,0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(194,109,47,0);
+  }
+}
+
+/* Pin positions for the updated wide North Texas map */
+.pin-muenster {
+  left: 11.8%;
+  top: 20%;
+}
+
+.pin-gainesville {
+  left: 29.5%;
+  top: 34%;
+}
+
+.pin-whitesboro {
+  left: 48%;
+  top: 25%;
+}
+
+.pin-valleyview {
+  left: 25.5%;
+  top: 59%;
+}
+
+.pin-sanger {
+  left: 25%;
+  top: 73%;
+}
+
+.pin-denton {
+  left: 29%;
+  top: 92%;
+}
+
+.pin-aubrey {
+  left: 45%;
+  top: 74%;
+}
+
+.pin-pilotpoint {
+  left: 47%;
+  top: 60%;
+}
+
+.pin-sherman {
+  left: 75%;
+  top: 28%;
+}
+
 /* Responsive */
 @media (max-width: 980px) {
   .fn-hero__grid {
@@ -168,5 +326,19 @@
   .fn-cta__inner {
     flex-direction: column;
     align-items: flex-start;
+  }
+    .fn-local-areas__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fn-map-pin {
+    width: 18px;
+    height: 18px;
+    border-width: 3px;
+  }
+
+  .fn-map-pin span {
+    opacity: 1;
+    font-size: .68rem;
   }
 }

@@ -3,7 +3,11 @@ async function injectFooter() {
   const mount = document.getElementById("site-footer");
   if (!mount) return;
 
-  const res = await fetch("partials/footer.html", { cache: "no-store" });
+    const footerPath = window.location.pathname.includes("/landing-pages/")
+    ? "../partials/footer.html"
+    : "partials/footer.html";
+
+  const res = await fetch(footerPath, { cache: "no-store" });
   if (!res.ok) return;
 
   mount.innerHTML = await res.text();

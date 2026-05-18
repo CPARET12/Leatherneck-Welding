@@ -4,18 +4,51 @@ document.addEventListener("DOMContentLoaded", () => {
   const slot = document.getElementById("site-header");
   if (!slot) return;
 
-  fetch("partials/header.html")
+    const headerPath = window.location.pathname.includes("/landing-pages/")
+    ? "../partials/header.html"
+    : "partials/header.html";
+
+  fetch(headerPath)
     .then(res => res.text())
     .then(html => {
       slot.innerHTML = html;
 
+      fixLandingPageHeaderPaths();
+
       setActiveNavLink();
-      initMobileHeaderNav();   // ✅ add this
+      initMobileHeaderNav();
     })
     .catch(err => {
       console.error("Error loading header partial:", err);
     });
 });
+
+function fixLandingPageHeaderPaths() {
+  const isLandingPage = window.location.pathname.includes("/landing-pages/");
+  if (!isLandingPage) return;
+
+  const logo = document.querySelector(".brand-logo");
+  if (logo) {
+    logo.src = "../folder.images/logo-horizontal.png";
+  }
+
+  document.querySelectorAll("#site-header a[href]").forEach((link) => {
+    const href = link.getAttribute("href");
+
+    if (
+      !href ||
+      href.startsWith("http") ||
+      href.startsWith("tel:") ||
+      href.startsWith("mailto:") ||
+      href.startsWith("#") ||
+      href.startsWith("../")
+    ) {
+      return;
+    }
+
+    link.setAttribute("href", `../${href}`);
+  });
+}
 
 function setActiveNavLink() {
   const file = window.location.pathname.split("/").pop().toLowerCase();
